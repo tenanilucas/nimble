@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--secondary);
+}
+
+html,
+body,
+#root {
+  max-height: 100vh;
+  max-width: 100vw;
+
+  height: 100%;
+  width: 100%;
+}
+
+body,
+button,
+input,
+textarea {
+  font: 400 16px 'Roboto', sans-serif;
+}
+
+html {
+  background: var(--background);
+}
+
+:root {
+  --primary: #5bb4e5;
+  --background: #f1f1f1;
+  --secondary: #29292e;
+  --gray: #a8a8b3;
+  --white: #FFFFFF;
+}
