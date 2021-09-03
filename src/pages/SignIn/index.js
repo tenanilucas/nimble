@@ -1,24 +1,28 @@
+import axios from "axios";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import api from "../../services/api";
+// import api from "../../services/api";
 import { login } from "../../services/auth";
 import "./styles.scss";
 
 class SignIn extends Component {
   state = {
-    email: "",
+    username: "",
     password: "",
     error: "",
   };
 
   handleSignIn = async (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-    if (!email || !password) {
+    const { username, password } = this.state;
+    if (!username || !password) {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       try {
-        const response = await api.post("/sessions", { email, password });
+        const response = await axios.post(
+          `https://vdob2n-hom-protheus.totvscloud.com.br:24387/rest01/api/oauth2/v1/token?grant_type=password&password=${password}&username=${username}`,
+          { username, password }
+        );
         login(response.data.token);
         this.props.history.push("/app");
       } catch (err) {
@@ -44,9 +48,9 @@ class SignIn extends Component {
             <form onSubmit={this.handleSignIn}>
               {this.state.error && <p>{this.state.error}</p>}
               <input
-                type="email"
-                placeholder="Endereço de e-mail"
-                onChange={(e) => this.setState({ email: e.target.value })}
+                type="text"
+                placeholder="Usuário"
+                onChange={(e) => this.setState({ username: e.target.value })}
               />
               <input
                 type="password"
