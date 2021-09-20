@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 // import api from "../../services/api";
 import { login } from "../../services/auth";
 import "./styles.scss";
-
 class SignIn extends Component {
   state = {
     username: "",

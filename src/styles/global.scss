@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--secondary);
+  // color: var(--secondary);
 }
 
 html,
@@ -53,11 +53,24 @@ html {
   }
 }
 
+main {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+}
+
+.sidebar.active~main {
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
 
 :root {
   --primary: #5bb4e5;
   --background: #f1f1f1;
-  --secondary: #29292e;
+  --secondary: #1a2226;
   --gray: #a8a8b3;
   --white: #FFFFFF;
+  --skin-blue: #b8c7ce;
 }
