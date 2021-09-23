@@ -6,6 +6,7 @@ body {
 }
 
 .sidebar {
+  z-index: 99999;
   position: fixed;
   top: 0;
   left: 0;
@@ -236,12 +237,36 @@ body {
 }
 
 main {
-  width: calc(100% - 78px);
-  left: 78px;
   transition: all 0.5s ease;
 }
 
 .sidebar.active~main {
   width: calc(100% - 240px);
   left: 240px;
+}
+
+@media only screen and (max-width : 600px) {
+  .sidebar {
+    height: 100%;
+    width: 50px;
+    padding: 6px 0;
+
+    ul li {
+      margin: 0;
+    }
+
+    &.active {
+      width: 240px;
+    }
+  }
+
+  main {
+    width: calc(100% - 50px);
+    left: 50px;
+  }
+
+  .sidebar.active~main {
+    width: calc(100% - 50px);
+    left: 50px;
+  }
 }

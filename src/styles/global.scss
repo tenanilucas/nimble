@@ -19,7 +19,7 @@ body,
 button,
 input,
 textarea {
-  font: 400 17px 'Roboto', sans-serif;
+  font: 400 16px 'Roboto', sans-serif;
 }
 
 html {
@@ -35,7 +35,7 @@ html {
   color: var(--white);
   padding: 0 32px;
 
-  // display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -60,9 +60,11 @@ main {
   left: 78px;
 }
 
-.sidebar.active~main {
-  width: calc(100% - 240px);
-  left: 240px;
+@media only screen and (max-width : 600px) {
+  main {
+    width: calc(100% - 50px);
+    left: 50px;
+  }
 }
 
 
