@@ -1,39 +1,20 @@
-import React, { createContext, useState } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from "./pages/App";
 import Home from "./pages/Home";
-import SignIn from "./pages/SignIn";
-import { isAuthenticated } from "./services/auth";
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      isAuthenticated() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{ pathname: "/signin", state: { from: props.location } }}
-        />
-      )
-    }
-  />
-);
-
-export const AuthContext = createContext({});
+import Login from "./pages/Login";
+import { history } from "./history";
+import PrivateRoute from "./PrivateRoute";
 
 function Routes() {
-  const [user, setUser] = useState();
   return (
-    <BrowserRouter>
-      <AuthContext.Provider value={{ user, setUser }}>
-        <Switch>
-          <Route exact path="/" component={SignIn} />
-          <PrivateRoute path="/app" component={App} />
-          <PrivateRoute path="/home" component={Home} />
-          <Route path="*" component={() => <h1>Page not found</h1>} />
-        </Switch>
-      </AuthContext.Provider>
+    <BrowserRouter history={history}>
+      <Switch>
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute path="/app" component={App} />
+        <PrivateRoute path="/home" component={Home} />
+        <PrivateRoute path="*" component={() => <h1>Page not found</h1>} />
+      </Switch>
     </BrowserRouter>
   );
 }

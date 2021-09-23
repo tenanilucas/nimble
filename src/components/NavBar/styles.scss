@@ -11,7 +11,7 @@ body {
   left: 0;
   height: 100%;
   width: 78px;
-  background: #11101d;
+  background: var(--third);
   padding: 6px 14px;
   transition: all 0.5s ease;
 
@@ -20,18 +20,18 @@ body {
   }
 
   .logo_content .logo {
-    color: #fff;
+    background: var(--background);
+    border-radius: 15px;
     display: flex;
-    height: 50px;
-    width: 100%;
+    height: 60px;
+    width: 85%;
     align-items: center;
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s ease;
 
     .logo_name {
-      font-size: 20px;
-      font-weight: 400;
+      width: 100%;
     }
   }
 
@@ -41,7 +41,7 @@ body {
 
   #btn {
     position: absolute;
-    color: #fff;
+    color: var(--white);
     left: 50%;
     top: 20px;
     font-size: 20px;
@@ -75,7 +75,7 @@ body {
         border-radius: 6px;
         height: 35px;
         width: 122px;
-        background: #fff;
+        background: var(--white);
         line-height: 35px;
         text-align: center;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -94,7 +94,7 @@ body {
       #search {
         position: absolute;
         z-index: 99;
-        color: #fff;
+        color: var(--white);
         margin-top: 16px;
         font-size: 17px;
         min-width: 50px;
@@ -113,19 +113,19 @@ body {
         border-radius: 12px;
         outline: none;
         border: none;
-        background: #1d1b31;
+        background: var(--secondary);
         padding-left: 50px;
         font-size: 18px;
-        color: #fff;
+        color: var(--white);
       }
 
-      input:hover {
-        background: #fff;
-        color: #1d1b31;
-      }
+      // input:hover {
+      //   background: var(--white);
+      //   color: var(--secondary);
+      // }
 
       a {
-        color: #fff;
+        color: var(--white);
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -134,8 +134,8 @@ body {
         white-space: nowrap;
 
         &:hover {
-          background: #fff;
-          color: #11101d;
+          background: var(--white);
+          color: var(--third);
         }
 
         svg {
@@ -166,7 +166,7 @@ body {
 
   .profile_content {
     position: absolute;
-    color: #fff;
+    color: var(--white);
     bottom: 0;
     left: 0;
     width: 100%;
@@ -216,6 +216,7 @@ body {
         font-size: 20px;
         border-radius: 12px;
         text-align: center;
+        color: var(--white);
       }
     }
   }
@@ -230,7 +231,7 @@ body {
   }
 
   &.active .profile {
-    background: #1d1b31;
+    background: var(--secondary);
   }
 }
 

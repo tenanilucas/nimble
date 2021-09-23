@@ -9,13 +9,20 @@ function NavBar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSideBar = () => setSidebar(!sidebar);
+  const logOut = () => {
+    localStorage.clear("app-token");
+  };
 
   return (
     <>
       <div className={sidebar ? "sidebar active" : "sidebar"}>
         <div className="logo_content">
           <div className="logo">
-            <div className="logo_name">EspaçoLaser</div>
+            <img
+              src="https://cms.evup.com.br/api/assets/736a71bb-3624-455a-ad87-2cc6cc5f2d27/"
+              alt="Logo EspaçoLaser"
+              className="logo_name"
+            />
           </div>
           <FaIcons.FaBars id="btn" onClick={showSideBar} />
         </div>
@@ -41,16 +48,16 @@ function NavBar() {
           <div className="profile">
             <div className="profile_details">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRij6dtiHizH96qpCOe8WeXXP3yLyQJkPdGVg&usqp=CAU"
+                src="https://observatoriodocinema.uol.com.br/wp-content/uploads/2019/09/cropped-spiderman-3-1540228026.jpg"
                 alt="Foto de perfil"
               />
               <div className="name_job">
-                <div className="name">Lucas Denhoninho</div>
+                <div className="name">Peter Parker</div>
                 <div className="job">Web Designer</div>
               </div>
             </div>
             <Link to="/">
-              <RiIcons.RiLogoutBoxLine id="log_out" />
+              <RiIcons.RiLogoutBoxLine id="log_out" onClick={logOut} />
             </Link>
           </div>
         </div>
