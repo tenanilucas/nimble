@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import { history } from "./history";
 import PrivateRoute from "./PrivateRoute";
+import PageNotFound from "./pages/PageNotFound";
 
 function Routes() {
   return (
@@ -13,7 +14,7 @@ function Routes() {
         <Route exact path="/login" component={Login} />
         <PrivateRoute path="/app" component={App} />
         <PrivateRoute path="/home" component={Home} />
-        <PrivateRoute path="*" component={() => <h1>Page not found</h1>} />
+        <PrivateRoute path="*" component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   );
