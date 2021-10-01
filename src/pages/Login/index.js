@@ -19,18 +19,22 @@ const Login = () => {
   }
 
   const handleSubmit = (values) => {
-    axios
-      .post(
-        `https://vdob2n-hom-protheus.totvscloud.com.br:24387/rest01/api/oauth2/v1/token?grant_type=password&password=${user.password}&username=${user.username}`,
-        values
-      )
-      .then((resp) => {
-        const { data } = resp;
-        if (data) {
-          localStorage.setItem("app-token", data.token);
-          handleHistory();
-        }
-      });
+    localStorage.setItem("app-token", "undefined");
+    handleHistory();
+    // axios
+    //   .post(
+    //     `https://vdob2n-hom-protheus.totvscloud.com.br:24387/rest01/api/oauth2/v1/token?grant_type=password&password=${user.password}&username=${user.username}`,
+    //     values
+    //   )
+    //   .then((resp) => {
+    //     const { data } = resp;
+    //     localStorage.setItem("app-token");
+    //     if (data) {
+    //       localStorage.setItem("app-token", data.acess_token);
+    //       handleHistory();
+    //       // console.log(data);
+    //     }
+    //   });
   };
 
   return (

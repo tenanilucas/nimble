@@ -1,5 +1,5 @@
 import React from "react";
-import * as BsIcons from "react-icons/bs";
+import * as RiIcons from "react-icons/ri";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 
@@ -11,9 +11,9 @@ export const SideBarData = [
     cName: "nav-text",
   },
   {
-    title: "Dashboard",
-    path: "/home",
-    icon: <BsIcons.BsGrid1X2Fill />,
+    title: "Time",
+    path: "/team",
+    icon: <RiIcons.RiTeamFill />,
     cName: "nav-text",
   },
   {
