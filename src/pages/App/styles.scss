@@ -54,7 +54,7 @@
 .sidebarOption__active,
 .sidebarOption__active h3,
 .sidebarOption__active svg.material-icons {
-  background-color: #fcecec;
+  background-color: var(--whitesmoke);
   color: var(--primary);
   font-weight: 800;
 }
@@ -83,7 +83,7 @@ body {
     top: 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid var(--whitesmoke);
     background-color: var(--white);
     z-index: 999;
     padding: 8px;
@@ -124,12 +124,12 @@ body {
     top: 0;
     display: flex;
     background-color: var(--white);
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid var(--whitesmoke);
     z-index: 999;
   }
 
   .section_selected {
-    background-color: #f5f5f5;
+    background-color: var(--whitesmoke);
     border-width: 3px;
     color: var(--primary);
     border-bottom: 3px solid var(--primary);
@@ -140,7 +140,58 @@ body {
   }
 
   .section:hover {
-    background-color: #f5f5f5;
+    background-color: var(--whitesmoke);
     border-width: 3px;
+  }
+}
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid var(--whitesmoke);
+  cursor: pointer;
+  z-index: 999;
+
+  &:hover {
+    border-top: 1px solid var(--whitesmoke);
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
+  }
+
+  .emailRow__options {
+    display: flex;
+    align-items: center;
+
+    svg,
+    input {
+      margin: 5px;
+    }
+  }
+
+  .emailRow__message {
+    display: flex;
+    flex: 0.8;
+    align-items: center;
+    font-size: 13px;
+
+    h4 {
+      width: 400px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  .emailRow__title {
+    font-size: 13px;
+    flex: 0.3;
+  }
+
+  .emailRow__time {
+    padding-right: 15px;
+    font-size: 10px;
+    font-weight: bold;
   }
 }

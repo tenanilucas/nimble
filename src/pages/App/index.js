@@ -19,23 +19,23 @@ function App() {
             </button>
             <div className="sidebarOption sidebarOption__active">
               <AiIcons.AiOutlineInbox />
-              <h3>Inbox</h3>
+              <h3>À aprovar</h3>
             </div>
             <div className="sidebarOption ">
               <AiIcons.AiOutlineStar />
-              <h3>Starred</h3>
+              <h3>Favoritos</h3>
             </div>
             <div className="sidebarOption ">
-              <MdIcons.MdOutlineWatchLater />
-              <h3>Snoozed</h3>
+              <AiIcons.AiOutlineCheck />
+              <h3>Aprovados</h3>
+            </div>
+            <div className="sidebarOption ">
+              <AiIcons.AiOutlineClose />
+              <h3>Não aprovados</h3>
             </div>
             <div className="sidebarOption ">
               <MdIcons.MdLabelImportantOutline />
-              <h3>Important</h3>
-            </div>
-            <div className="sidebarOption ">
-              <AiIcons.AiOutlineSend />
-              <h3>Sent</h3>
+              <h3>Importantes</h3>
             </div>
           </div>
           <div className="emailList">
@@ -65,6 +65,21 @@ function App() {
               <div className="section">
                 <MdIcons.MdLocalOffer />
                 <h4>Promotions</h4>
+              </div>
+            </div>
+
+            <div className="emailList__list">
+              <div className="emailRow">
+                <div className="emailRow__options">
+                  <input type="checkbox" />
+                  <AiIcons.AiOutlineStar />
+                  <MdIcons.MdLabelImportantOutline />
+                  <h3 className="emailRow__title ">Title</h3>
+                  <div className="emailRow__message">
+                    <h4>Alguma mensgaem</h4>
+                  </div>
+                  <div className="emailRow__time">10pm</div>
+                </div>
               </div>
             </div>
           </div>
