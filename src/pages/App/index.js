@@ -53,6 +53,20 @@ function App() {
                 <AiIcons.AiTwotoneSetting />
               </div>
             </div>
+            <div className="emailList__sections">
+              <div className="section section_selected">
+                <AiIcons.AiOutlineInbox />
+                <h4>Primary</h4>
+              </div>
+              <div className="section">
+                <MdIcons.MdOutlinePeopleAlt />
+                <h4>People</h4>
+              </div>
+              <div className="section">
+                <MdIcons.MdLocalOffer />
+                <h4>Promotions</h4>
+              </div>
+            </div>
           </div>
         </div>
       </main>
