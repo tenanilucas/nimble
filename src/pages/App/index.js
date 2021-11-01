@@ -1,12 +1,18 @@
-import React from "react";
 import NavBar from "../../components/NavBar";
+import React, { useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as MdIcons from "react-icons/md";
 import * as IoIcons from "react-icons/io";
 import * as ImIcons from "react-icons/im";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 function App() {
+  const [dropdown, setDropdown] = useState(false);
+
+  const showDropdown = () => {
+    setDropdown(!dropdown);
+  };
   return (
     <>
       <NavBar />
@@ -44,7 +50,19 @@ function App() {
                 <input type="checkbox" />
                 <IoIcons.IoMdArrowDropdown />
                 <ImIcons.ImRedo2 />
-                <MdIcons.MdOutlineMoreVert />
+                <div className="dropdown">
+                  <button className="dropdown__button" onClick={showDropdown}>
+                    <MdIcons.MdOutlineMoreVert />
+                  </button>
+                  <div
+                    className={
+                      dropdown ? "dropdown__menu" : "dropdown__menu hide"
+                    }
+                  >
+                    <Link>Aprovar</Link>
+                    <Link>Não Aprovar</Link>
+                  </div>
+                </div>
               </div>
               <div className="emailList__settingsRight">
                 <AiIcons.AiOutlineCaretLeft />
