@@ -2,6 +2,8 @@ import React from "react";
 import NavBar from "../../components/NavBar";
 import * as AiIcons from "react-icons/ai";
 import * as MdIcons from "react-icons/md";
+import * as IoIcons from "react-icons/io";
+import * as ImIcons from "react-icons/im";
 import "./styles.scss";
 
 function App() {
@@ -34,6 +36,22 @@ function App() {
             <div className="sidebarOption ">
               <AiIcons.AiOutlineSend />
               <h3>Sent</h3>
+            </div>
+          </div>
+          <div className="emailList">
+            <div className="emailList__settings">
+              <div className="emailList__settingsLeft">
+                <input type="checkbox" />
+                <IoIcons.IoMdArrowDropdown />
+                <ImIcons.ImRedo2 />
+                <MdIcons.MdOutlineMoreVert />
+              </div>
+              <div className="emailList__settingsRight">
+                <AiIcons.AiOutlineCaretLeft />
+                <AiIcons.AiOutlineCaretRight />
+                <MdIcons.MdKeyboard />
+                <AiIcons.AiTwotoneSetting />
+              </div>
             </div>
           </div>
         </div>
