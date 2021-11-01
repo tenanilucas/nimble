@@ -12,10 +12,10 @@ function Routes() {
   return (
     <BrowserRouter history={history}>
       <Switch>
-        <Route exact path="/login" component={Login} />
-        <PrivateRoute path="/app" component={App} />
-        <PrivateRoute path="/home" component={Home} />
-        {/* <PrivateRoute path="*" component={PageNotFound} /> */}
+        <Route path="/login" exact component={Login} />
+        <PrivateRoute path="/app" exact component={App} />
+        <PrivateRoute path="/" exact component={Home} />
+        {/* <PrivateRoute path="*" exact component={PageNotFound} /> */}
         <PrivateRoute path="/team" exact component={Team} />
       </Switch>
     </BrowserRouter>

@@ -8,7 +8,7 @@ const initialValues = { username: "", password: "" };
 const Login = () => {
   const history = useHistory();
   const handleHistory = () => {
-    history.push("/home");
+    history.push("/");
   };
   const [user, setUser] = useState(initialValues);
 
@@ -26,11 +26,10 @@ const Login = () => {
       )
       .then((resp) => {
         const { data } = resp;
-        localStorage.setItem("app-token");
         if (data) {
-          localStorage.setItem("app-token", data.acess_token);
+          localStorage.setItem("app-token", data.access_token);
           handleHistory();
-          // console.log(data);
+          // console.log(data.access_token);
         }
       });
   };
