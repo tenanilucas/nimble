@@ -1,0 +1,60 @@
+.sidebar__document {
+  flex: 0.3;
+  max-width: 300px;
+  padding-right: 20px;
+}
+
+.sidebar__compose {
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  color: gray;
+  padding: 15px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.75);
+
+  svg.material-icons {
+    margin-right: 5px;
+  }
+}
+
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  color: #818181;
+
+  svg.material-icons {
+    padding: 5px;
+  }
+
+  h3 {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.sidebarOption:hover,
+.sidebarOption:hover h3,
+.sidebarOption:hover svg.material-icons,
+.sidebarOption__active,
+.sidebarOption__active,
+.sidebarOption__active h3,
+.sidebarOption__active svg.material-icons {
+  background-color: #fcecec;
+  color: var(--primary);
+  font-weight: 800;
+}
