@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { ErrorMessage, Formik, Form, Field } from "formik";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "./styles.scss";
+import api from "../../services/api";
 
 const initialValues = { username: "", password: "" };
 const Login = () => {
@@ -19,17 +19,16 @@ const Login = () => {
   }
 
   const handleSubmit = (values) => {
-    axios
+    api
       .post(
-        `https://vdob2n-hom-protheus.totvscloud.com.br:24387/rest01/api/oauth2/v1/token?grant_type=password&password=${user.password}&username=${user.username}`,
+        `/rest01/api/oauth2/v1/token?grant_type=password&password=${user.password}&username=${user.username}`,
         values
       )
       .then((resp) => {
         const { data } = resp;
         if (data) {
-          localStorage.setItem("app-token", data.access_token);
+          localStorage.setItem("@token", data.access_token);
           handleHistory();
-          // console.log(data.access_token);
         }
       });
   };

@@ -10,7 +10,7 @@ function NavBar() {
 
   const showSideBar = () => setSidebar(!sidebar);
   const logOut = () => {
-    localStorage.clear("app-token");
+    localStorage.clear("@token");
   };
 
   return (

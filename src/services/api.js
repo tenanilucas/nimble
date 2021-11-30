@@ -1,16 +1,22 @@
 import axios from "axios";
-import { getToken } from "./auth";
 
 const api = axios.create({
-  baseUrl: "http://localhost:3333/",
+  baseURL: "https://vdob2n-hom-protheus.totvscloud.com.br:24387/",
+  timeout: 30000,
 });
 
 api.interceptors.request.use(async (config) => {
-  const token = getToken();
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+  try {
+    const token = localStorage.getItem("@token");
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  } catch (err) {
+    console.error(err);
   }
-  return config;
 });
 
 export default api;

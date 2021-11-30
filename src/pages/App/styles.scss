@@ -2,6 +2,7 @@
   flex: 0.3;
   max-width: 300px;
   padding-right: 20px;
+  display: block;
 }
 
 .sidebar__compose {
@@ -231,5 +232,11 @@ body {
     padding-right: 15px;
     font-size: 10px;
     font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar__document {
+    display: none;
   }
 }
