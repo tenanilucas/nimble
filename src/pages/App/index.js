@@ -29,8 +29,6 @@ function App() {
     setDropdown(!dropdown);
   };
 
-  const mybumbers = 5;
-
   return (
     <>
       <NavBar />
