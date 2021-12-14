@@ -3,6 +3,7 @@ import { ErrorMessage, Formik, Form, Field } from "formik";
 import { useHistory } from "react-router-dom";
 import "./styles.scss";
 import api from "../../services/api";
+import axios from "axios";
 
 const initialValues = { username: "", password: "" };
 const Login = () => {
@@ -26,7 +27,19 @@ const Login = () => {
       )
       .then((resp) => {
         const { data } = resp;
-        if (data) {
+
+        api.interceptors.response.use(
+          (response) => {
+            return response;
+          },
+          (error) => {
+            if (error.response.status === 401) {
+              alert("Nome de usuário ou senha inválidos");
+            }
+            return error;
+          }
+        );
+        if (resp.status === 201) {
           localStorage.setItem("@token", data.access_token);
           handleHistory();
         }
