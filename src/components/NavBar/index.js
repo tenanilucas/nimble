@@ -1,68 +1,75 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
-import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
-import { SideBarData } from "../SideBarData";
 
 function NavBar() {
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSideBar = () => setSidebar(!sidebar);
   const logOut = () => {
     localStorage.clear("@token");
   };
 
+  var path = window.location.pathname;
   return (
-    <>
-      <div className={sidebar ? "sidebar active" : "sidebar"}>
-        <div className="logo_content">
-          <div className="logo">
-            <img
-              src="https://cms.evup.com.br/api/assets/736a71bb-3624-455a-ad87-2cc6cc5f2d27/"
-              alt="Logo EspaçoLaser"
-              className="logo_name"
-            />
-          </div>
-          <FaIcons.FaBars id="btn" onClick={showSideBar} />
+    <header className="header" id="header">
+      <nav className="nav container">
+        <a
+          href="https://www.espacolaser.com.br/"
+          target="_blank"
+          rel="noreferrer"
+          className="nav__logo"
+        >
+          <img
+            src="https://cms.evup.com.br/api/assets/736a71bb-3624-455a-ad87-2cc6cc5f2d27/"
+            alt="Logo EspaçoLaser"
+            className="logo_name"
+          />
+        </a>
+        <div className="nav__menu" id="nav-menu">
+          <ul className="nav__list">
+            <li className="nav__item">
+              <Link
+                to="/"
+                className={`nav__link ${path === "/" ? "active-link" : " "}`}
+                id="home"
+              >
+                <AiIcons.AiFillHome className="nav__icon" />
+                <span className="nav__name">Home</span>
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link
+                to="/app"
+                className={`nav__link ${path === "/app" ? "active-link" : " "}`}
+                id="app"
+              >
+                <IoIcons.IoMdDocument className="nav__icon" />
+                <span className="nav__name">Aprovação</span>
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link
+                to="/team"
+                className={`nav__link ${
+                  path === "/team" ? "active-link" : " "
+                }`}
+                id="team"
+              >
+                <RiIcons.RiTeamFill className="nav__icon" />
+                <span className="nav__name">Time</span>
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/" className="nav__link" id="log_out">
+                <RiIcons.RiLogoutBoxLine className="nav__icon" />
+                <span className="nav__name">Sair</span>
+              </Link>
+            </li>
+          </ul>
         </div>
-        <ul className="nav_list">
-          <li>
-            <FaIcons.FaSearch id="search" onClick={showSideBar} />
-            <input type="text" placeholder="Pesquisar..." />
-            <span className="tooltip">Pesquisar</span>
-          </li>
-          {SideBarData.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link to={item.path}>
-                  {item.icon}
-                  <span className="links_name">{item.title}</span>
-                </Link>
-                <span className="tooltip">{item.title}</span>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="profile_content">
-          <div className="profile">
-            <div className="profile_details">
-              <img
-                src="https://observatoriodocinema.uol.com.br/wp-content/uploads/2019/09/cropped-spiderman-3-1540228026.jpg"
-                alt="Foto de perfil"
-              />
-              <div className="name_job">
-                <div className="name">Peter Parker</div>
-                <div className="job">Web Designer</div>
-              </div>
-            </div>
-            <Link to="/">
-              <RiIcons.RiLogoutBoxLine id="log_out" onClick={logOut} />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
+      </nav>
+    </header>
   );
 }
 
