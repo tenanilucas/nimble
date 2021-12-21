@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import * as AiIcons from "react-icons/ai";
@@ -61,7 +61,7 @@ function NavBar() {
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/" className="nav__link" id="log_out">
+              <Link to="/" className="nav__link" id="log_out" onClick={logOut}>
                 <RiIcons.RiLogoutBoxLine className="nav__icon" />
                 <span className="nav__name">Sair</span>
               </Link>
