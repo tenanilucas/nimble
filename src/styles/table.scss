@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+
+  thead td {
+    font-weight: 600;
+  }
+
+  tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+
+    td {
+      padding: 10px;
+      font-size: 14px;
+      // white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    td:last-child {
+      text-align: end;
+    }
+  }
+
+  tr:hover {
+    background-color: var(--primary);
+    color: var(--white)
+  }
+
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+}
