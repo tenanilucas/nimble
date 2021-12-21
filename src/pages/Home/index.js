@@ -6,7 +6,9 @@ function Home() {
     <>
       <NavBar />
       <main>
-        <h1>Home</h1>
+        <section className="container section section__height">
+          <h1 className="section__title">Home</h1>
+        </section>
       </main>
     </>
   );

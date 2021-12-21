@@ -7,9 +7,7 @@ import api from "../../services/api";
 const initialValues = { username: "", password: "" };
 const Login = () => {
   const history = useHistory();
-  const handleHistory = () => {
-    history.push("/");
-  };
+
   const [user, setUser] = useState(initialValues);
 
   function onChange(event) {
@@ -29,10 +27,10 @@ const Login = () => {
 
         if (resp.status === 201) {
           localStorage.setItem("@token", data.access_token);
-          handleHistory();
+          history.push("/");
         }
       })
-      .catch((error) => {
+      .catch(() => {
         alert("Nome de usuário ou senha inválidos");
       });
   };
