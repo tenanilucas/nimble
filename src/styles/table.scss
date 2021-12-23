@@ -3,10 +3,10 @@ table {
   border-collapse: collapse;
   margin-top: 10px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
 
   tr,
-  td {
+  td,
+  th {
     padding: 10px;
   }
 
@@ -25,7 +25,7 @@ table {
     overflow: hidden;
 
     td {
-      font-size: 14px;
+      font-size: var(--normal-font-size);
       overflow: hidden;
       text-overflow: ellipsis;
 
@@ -46,8 +46,17 @@ table {
   }
 }
 
-@media screen and (max-widht:768px) {
+@media screen and (max-width: 500px) {
   table {
-    width: 90%;
+
+    tr,
+    td,
+    th {
+      padding: 5px;
+    }
+
+    tr td {
+      font-size: var(--tiny-font-size);
+    }
   }
 }
