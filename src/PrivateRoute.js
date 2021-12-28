@@ -11,9 +11,9 @@ const PrivateRoute = (props) => {
     },
     async function (error) {
       if (error.response.status === 401) {
-        history.push("/login");
         localStorage.clear("@token");
         alert("Sessão expirada");
+        history.push("/login");
       }
       // return Promise.reject(error);
     }
