@@ -23,7 +23,7 @@
     align-items: stretch;
     text-align: center;
 
-    >img {
+    > img {
       align-self: center;
       width: 100%;
       max-width: 300px;
@@ -41,7 +41,7 @@
       button,
       input {
         width: 100%;
-        margin-top: 16px
+        margin-top: 16px;
       }
 
       .login-error {
@@ -59,7 +59,7 @@
     align-items: center;
 
     &::before {
-      content: '';
+      content: "";
       flex: 1;
       height: 1px;
       background: var(--gray);
@@ -67,7 +67,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       flex: 1;
       height: 1px;
       background: var(--gray);

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@400;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@400;600&display=swap");
 
 :root {
   --header-height: 3rem;
@@ -10,21 +9,20 @@
   --title-color: hsl(var(--hue), 12%, 15%);
   --text-color: hsl(var(--hue), 8%, 35%);
   --body-color: hsl(var(--hue), 100%, 99%);
-  --container-color: #FFF;
+  --container-color: #fff;
   --primary: #5bb4e5;
   --background: #f1f1f1;
   --secondary: #1d1b31;
   --third: #11101d;
   --gray: #a8a8b3;
-  --white: #FFFFFF;
+  --white: #ffffff;
   --skin-blue: #b8c7ce;
   --whitesmoke: #f5f5f5;
 
-  --body-font: 'Open Sans', sans-serif;
+  --body-font: "Open Sans", sans-serif;
   --h1-font-size: 2.5rem;
-  --normal-font-size: .938rem;
-  --tiny-font-size: .625rem;
-
+  --normal-font-size: 0.938rem;
+  --tiny-font-size: 0.625rem;
 
   --z-tooltip: 10;
   --z-fixed: 100;
@@ -51,7 +49,6 @@ body {
   background: var(--whitesmoke);
   color: var(--text-color);
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -85,7 +82,7 @@ main {
 }
 
 h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: var(--h1-font-size);
   color: var(--title-color);
   text-align: center;
