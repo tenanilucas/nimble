@@ -4,9 +4,11 @@ import "./styles.scss";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
+import toast from "react-hot-toast";
 
 function NavBar() {
   const logOut = () => {
+    toast.success("Sessão encerrada");
     localStorage.clear("@token");
   };
 

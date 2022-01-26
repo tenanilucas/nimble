@@ -3,6 +3,7 @@ import { ErrorMessage, Formik, Form, Field } from "formik";
 import { useHistory } from "react-router-dom";
 import "./styles.scss";
 import api from "../../services/api";
+import toast from "react-hot-toast";
 
 const initialValues = { username: "", password: "" };
 const Login = () => {
@@ -27,11 +28,12 @@ const Login = () => {
 
         if (resp.status === 201) {
           localStorage.setItem("@token", data.access_token);
+          toast.success("Login feito com Sucesso");
           history.push("/");
         }
       })
       .catch(() => {
-        alert("Nome de usuário ou senha inválidos");
+        toast.error("Nome de usuário ou senha inválidos");
       });
   };
 

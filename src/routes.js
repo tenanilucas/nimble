@@ -7,10 +7,12 @@ import { history } from "./history";
 import PrivateRoute from "./PrivateRoute";
 // import PageNotFound from "./pages/PageNotFound";
 import Team from "./pages/Team";
+import { Toaster } from "react-hot-toast";
 
 function Routes() {
   return (
     <BrowserRouter history={history}>
+      <Toaster position="top-center" />
       <Switch>
         <Route path="/login" exact component={Login} />
         <PrivateRoute path="/app" exact component={App} />

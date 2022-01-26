@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { Route, Redirect, useHistory } from "react-router-dom";
 import api from "./services/api";
 
@@ -12,7 +13,7 @@ const PrivateRoute = (props) => {
     async function (error) {
       if (error.response.status === 401) {
         localStorage.clear("@token");
-        alert("Sessão expirada");
+        toast.error("Sessão expirada");
         history.push("/login");
       }
       // return Promise.reject(error);
