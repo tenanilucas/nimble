@@ -50,7 +50,7 @@ function NavBar() {
                 <span className="nav__name">Aprovação</span>
               </Link>
             </li>
-            <li className="nav__item">
+            {/* <li className="nav__item">
               <Link
                 to="/team"
                 className={`nav__link ${
@@ -61,7 +61,7 @@ function NavBar() {
                 <RiIcons.RiTeamFill className="nav__icon" />
                 <span className="nav__name">Time</span>
               </Link>
-            </li>
+            </li> */}
             <li className="nav__item">
               <Link to="/" className="nav__link" id="log_out" onClick={logOut}>
                 <RiIcons.RiLogoutBoxLine className="nav__icon" />
