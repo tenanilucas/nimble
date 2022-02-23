@@ -1,39 +1,8 @@
 .pageNotFound {
-  min-height: 100vh;
-  background: linear-gradient(45deg, #4158d0, #c850c0);
-  margin: 0 auto;
-  padding: 0 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  height: 100%;
-}
-
-.container {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 320px;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-
-  h1 {
-    font-size: 160px;
-    font-weight: 900;
-    letter-spacing: 20px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #343434;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .container h1 {
-    font-size: 100px;
-    font-weight: 900;
-    letter-spacing: 15px;
-  }
+  margin: 0 auto;
 }
