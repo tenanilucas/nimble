@@ -33,7 +33,12 @@ const Login = () => {
         }
       })
       .catch(() => {
-        toast.error("Nome de usuário ou senha inválidos");
+        toast.error(
+          "Nome de usuário ou senha inválidos.\nSe o erro persistir entre em contato com o suporte.",
+          {
+            duration: 3000,
+          }
+        );
       });
   };
 
