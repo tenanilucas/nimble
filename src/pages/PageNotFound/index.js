@@ -7,12 +7,12 @@ function PageNotFound() {
   return (
     <>
       <NavBar />
-      <main className="pageNotFound">
-        <div className="container">
+      <main>
+        <div className="pageNotFound">
           <h2>Oops! Página não encontrada</h2>
           <h1>404</h1>
           <p>Não conseguimos encontrar a página que está procurando</p>
-          <Link to="/home">
+          <Link to="/">
             <button className="button">Volte para a home</button>
           </Link>
         </div>
