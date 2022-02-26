@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "./pages/App";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -11,7 +11,7 @@ import { Toaster } from "react-hot-toast";
 
 function Routes() {
   return (
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <Toaster position="top-center" />
       <Switch>
         <Route path="/login" exact component={Login} />
@@ -20,7 +20,7 @@ function Routes() {
         <PrivateRoute path="*" exact component={PageNotFound} />
         <PrivateRoute path="/team" exact component={Team} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 
