@@ -1,6 +1,6 @@
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem;
   margin-top: 2rem;
 
@@ -9,7 +9,6 @@
     padding: 1rem;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    cursor: pointer;
 
     &:hover {
       background-color: #f5f5f5;
@@ -35,6 +34,11 @@
   small {
     font-weight: 600;
     color: #555;
+
+    a {
+      color: #5850ec;
+      text-decoration: none;
+    }
   }
 }
 
@@ -68,13 +72,6 @@
   .cards {
     grid-template-columns: repeat(1, 1fr);
   }
-}
-
-.documents-grid {
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: auto 66%;
-  grid-gap: 3rem;
 }
 
 .documents-card {
@@ -128,7 +125,7 @@
 }
 
 .documents {
-  overflow-x: auto;
+  margin-top: 4rem;
 
   h3 {
     small {
@@ -145,32 +142,15 @@
     box-shadow: none;
     margin-top: 1rem;
 
-    tr {
-      border: 0;
-      background: var(--whitesmoke);
-    }
-
-    td {
-      padding: 0;
-      margin: 0;
-
-      div {
-        background: var(--white);
-        margin-bottom: 1rem;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        font-size: 0.85rem;
-        color: #444;
-      }
-    }
-
     .indicator {
       background: #c9f7f5;
       height: 15px;
       width: 15px;
       border-radius: 50%;
+    }
+
+    a {
+      color: var(--secondary);
     }
 
     button {
@@ -179,6 +159,7 @@
       border: 1px solid #8da2fb;
       padding: 0.5rem;
       border-radius: 3px;
+      cursor: pointer;
     }
   }
 }
@@ -186,5 +167,9 @@
 @media screen and (max-width: 767px) {
   .documents-grid {
     display: block;
+  }
+
+  table button {
+    font-size: 11px;
   }
 }
